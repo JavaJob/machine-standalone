@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension
+      id="BPMN2 Modeler"
+      point="org.eclipse.core.runtime.products">
+    <product
+          application="org.eclipse.bpm2.modeler.standalone.application"
+          description="BPMN 2.0 Process Modeling"
+          name="Modeler">
+      <property
+            name="windowImages"
+            value="icons/16_24.png,icons/32_24.png,icons/48_24.png">
+      </property>
+      <property
+            name="aboutText"
+            value="contributors, 2012, 2013.&#x0A;&#x0A;">
+      </property>
+      <property
+            name="aboutImage"
+            value="images/about.png">
+      </property>
+      <property
+            name="appName"
+            value="Modeler">
+      </property>
+    </product>
+  </extension>
+  <!-- new wizard -->
+  <extension point="org.eclipse.ui.newWizards">
+    <category
+      id="bpmn2.modeler" 
+      name="BPMN"> 
+    </category>
+    <wizard
+        category="bpmn2.modeler"
+        class="org.eclipse.bpm2.modeler.standalone.wizards.ExternalBpmn2DiagramWizard"
+        icon="icons/bpmn2_editor_16.png"
+        id="org.eclipse.bpm2.modeler.standalone.wizards.ExternalBpmn2DiagramWizard"
+        name="BPMN 2.0 File (external)"
+        canFinishEarly="true"
+        hasPages="false">
+      <description>
+          Creates a new BPMN 2.0 file on the local file system
+       </description>
+    </wizard>
+  </extension>
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <newWizardShortcut
+               id="org.eclipse.bpm2.modeler.standalone.wizards.ExternalBpmn2DiagramWizard">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+   
+  <extension
+        id="org.eclipse.bpm2.modeler.standalone.application"
+        point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            icon="icons/16_8.png"
+            thread="main"
+            visible="true">
+        <run class="org.eclipse.bpm2.modeler.standalone.ModelerApplication">
+        </run>
+      </application>
+  </extension>
+</plugin>
