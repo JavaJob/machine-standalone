@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.platform,
  org.eclipse.bpmn2,
  org.eclipse.core.filesystem
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Plugin-Class: org.eclipse.bpmn2-modeler.standalone.Activator
+Plugin-Class: org.eclipse.bpmn2.modeler.standalone.Activator
 Bundle-ClassPath: lib/commons-io.jar,
  .
 Export-Package: org.eclipse.bpmn2.modeler.standalone

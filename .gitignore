@@ -44,3 +44,6 @@ org.eclipse.bpmn2.modeler.standalone.tests/.settings/org.eclipse.m2e.core.prefs
 .idea/vcs.xml
 
 .idea/workspace.xml
+*.class
+org.eclipse.bpmn2.modeler.standalone.bundle/target/classes/it/sauronsoftware/junique/package.html
+*.jar
