@@ -40,8 +40,7 @@ public class ModelerApplication extends IDEApplication {
 					shell.setMinimized(false);
 				}
 				shell.forceActive();
-			}
-			
+			}		
 			return null;
 		}
 	};
@@ -75,7 +74,7 @@ public class ModelerApplication extends IDEApplication {
 		}
 		
 		try {
-			URL platformLocation = initializePlatformLocation("camundaModeler");
+			URL platformLocation = initializePlatformLocation("BPMN2-Modeler");
 			
 			// we use toURL here because it properly handles whitespaces
 			// (in opposite to toURI())
