@@ -50,3 +50,4 @@ org.eclipse.bpmn2.modeler.standalone.tests/.settings/org.eclipse.m2e.core.prefs
 *.class
 
 org.eclipse.bpmn2.modeler.standalone.product/target/products/org.eclipse.bpmn2.modeler.standalone.product/macosx/cocoa/x86_64/modeler/configuration/org.eclipse.osgi/85/data/SCR
+org.eclipse.bpmn2.modeler.standalone.bundle/target/classes/it/sauronsoftware/junique/package.html

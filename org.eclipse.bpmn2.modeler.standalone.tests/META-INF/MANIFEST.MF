@@ -3,10 +3,10 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Test
 Bundle-SymbolicName: org.eclipse.bpmn2.modeler.standalone.tests
 Bundle-Version: 0.0.0
-Bundle-Activator: org.eclipse.bpmn2-modeler.standalone.test.Activator
+Bundle-Activator: org.eclipse.bpmn2.modeler.standalone.test.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.junit;bundle-version="4.8.2",
- org.eclipse.bpmn2-modeler.standalone.bundle,
+ org.eclipse.bpmn2.modeler.standalone.bundle,
  org.eclipse.ui.ide.application;bundle-version="1.0.400"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
