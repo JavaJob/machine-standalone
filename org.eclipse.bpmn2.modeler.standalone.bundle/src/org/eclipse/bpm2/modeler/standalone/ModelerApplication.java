@@ -28,12 +28,10 @@ public class ModelerApplication extends IDEApplication {
 	private static final String MODELER_APPLICATION_ID = ModelerApplication.class.getName();
 	
 	private static class FocusHandler implements MessageHandler {
-		
 		@Override
 		public String handle(String args) {
 			IWorkbench workbench = PlatformUI.getWorkbench();
-			IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-			
+			IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();			
 			Shell shell = window.getShell();
 			if (shell != null) {
 				if (shell.getMinimized()) {
@@ -51,8 +49,7 @@ public class ModelerApplication extends IDEApplication {
 		try {
 			lockApp();
 		} catch (AlreadyLockedException e) {
-			focusApp();
-			
+			focusApp();			
 			return EXIT_OK;
 		}
 
@@ -71,8 +68,7 @@ public class ModelerApplication extends IDEApplication {
 		
 		if (location.isSet()) {
 			return;
-		}
-		
+		}	
 		try {
 			URL platformLocation = initializePlatformLocation("BPMN2-Modeler");
 			
