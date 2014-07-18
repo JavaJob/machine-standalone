@@ -29,20 +29,17 @@ public class ModelerApplication extends IDEApplication {
 	//C:\Users\wirt\Desktop\BPM Luna\eclipse\eclipse\runtime-org.eclipse.bpmn2.modeler.standalone.bundle.BPMN2Modeler
 	
 	private static class FocusHandler implements MessageHandler {
-		
 		@Override
 		public String handle(String args) {
 			IWorkbench workbench = PlatformUI.getWorkbench();
-			IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();
-			
+			IWorkbenchWindow window = workbench.getActiveWorkbenchWindow();			
 			Shell shell = window.getShell();
 			if (shell != null) {
 				if (shell.getMinimized()) {
 					shell.setMinimized(false);
 				}
 				shell.forceActive();
-			}
-			
+			}		
 			return null;
 		}
 	};
@@ -55,8 +52,7 @@ public class ModelerApplication extends IDEApplication {
 		try {
 			lockApp();
 		} catch (AlreadyLockedException e) {
-			focusApp();
-			
+			focusApp();			
 			return EXIT_OK;
 		}
 
@@ -73,13 +69,15 @@ public class ModelerApplication extends IDEApplication {
 
 		Location location = Platform.getInstanceLocation();
 		
+
 //		if (location.isSet()) {
 //			return;
 //		}
 		
 		try {
 			URL platformLocation = initializePlatformLocation("BPMN2-Modeler", location);
-			
+
+		
 			// we use toURL here because it properly handles whitespaces
 			// (in opposite to toURI())
 			location.set(platformLocation, false);
