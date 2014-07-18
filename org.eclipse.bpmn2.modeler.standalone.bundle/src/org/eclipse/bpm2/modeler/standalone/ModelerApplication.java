@@ -26,6 +26,7 @@ public class ModelerApplication extends IDEApplication {
 	private static final String WORKSPACE = "workspace";
 	private static final String SEPARATOR = File.separator;
 	private static final String MODELER_APPLICATION_ID = ModelerApplication.class.getName();
+	//C:\Users\wirt\Desktop\BPM Luna\eclipse\eclipse\runtime-org.eclipse.bpmn2.modeler.standalone.bundle.BPMN2Modeler
 	
 	private static class FocusHandler implements MessageHandler {
 		
@@ -48,6 +49,8 @@ public class ModelerApplication extends IDEApplication {
 
 	@Override
 	public Object start(IApplicationContext appContext) throws Exception {
+		
+	
 	
 		try {
 			lockApp();
@@ -70,12 +73,12 @@ public class ModelerApplication extends IDEApplication {
 
 		Location location = Platform.getInstanceLocation();
 		
-		if (location.isSet()) {
-			return;
-		}
+//		if (location.isSet()) {
+//			return;
+//		}
 		
 		try {
-			URL platformLocation = initializePlatformLocation("camundaModeler");
+			URL platformLocation = initializePlatformLocation("BPMN2-Modeler", location);
 			
 			// we use toURL here because it properly handles whitespaces
 			// (in opposite to toURI())
@@ -86,12 +89,12 @@ public class ModelerApplication extends IDEApplication {
 	}
 
 	@SuppressWarnings("deprecation")
-	public static URL initializePlatformLocation(String productName) throws IOException {
+	public static URL initializePlatformLocation(String productName, Location location) throws IOException {
 		
 		File dataDirectory = getDataDirectory(productName);
 		File modelerDir = getModelerDirectory();
 		
-		File workspaceDir = new File(dataDirectory, WORKSPACE);
+		File workspaceDir = new File(modelerDir, WORKSPACE);
 		if (!workspaceDir.exists()) {
 			
 			FileUtils.forceMkdir(workspaceDir);
@@ -116,8 +119,23 @@ public class ModelerApplication extends IDEApplication {
 	
 
 	public static File getModelerDirectory() {
-		String home = System.getProperty("eclipse.home.location");
-		return toFile(home);
+		//String home = ModelerApplication.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+		//String home = "."; //System.getProperty(".");
+		//String home = System.getProperty("eclipse.home.location");		
+		String home = System.getProperty("eclipse.launcher");
+		//String applicationDir = ModelerApplication.class.getClass().getProtectionDomain().getCodeSource().getLocation().getFile(); 
+
+//		if (applicationDir.endsWith(".exe"))
+//		{
+//		    applicationDir = new File(applicationDir).getParent();
+//		}
+		
+		if (home.endsWith(".exe"))
+		{
+			home = new File(home).getParent();
+		}
+
+		return new File(home);
 	}
 
 	public static File getDataDirectory(String name) {

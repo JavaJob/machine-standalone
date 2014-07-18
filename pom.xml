@@ -21,7 +21,7 @@
 	<modules>
 		<module>../bpmn2-modeler</module>
 		<module>org.eclipse.bpmn2.modeler.standalone.bundle</module>
-		<module>org.eclipse.bpmn2.modeler.standalone.tests</module>
+<!-- 		<module>org.eclipse.bpmn2.modeler.standalone.tests</module> -->
 		<module>org.eclipse.bpmn2.modeler.standalone.product</module>
 		<module>org.eclipse.bpmn2.modeler.standalone.parent</module>
 	</modules>

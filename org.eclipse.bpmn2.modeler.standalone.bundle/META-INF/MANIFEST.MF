@@ -24,3 +24,4 @@ Plugin-Class: org.eclipse.bpmn2.modeler.standalone.Activator
 Bundle-ClassPath: lib/commons-io.jar,
  .
 Export-Package: org.eclipse.bpmn2.modeler.standalone
+
